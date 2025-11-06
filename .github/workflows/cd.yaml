@@ -1,15 +1,14 @@
-# .github/workflows/cd.yaml
 name: CD Workflow - Build and Push Docker Image
 
 on:
   push:
     branches: [ main ]
+  workflow_dispatch: {}
 
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
 
-    # Keep these; they don't hurt, but PAT will be used for GHCR
     permissions:
       contents: read
       packages: write
@@ -25,7 +24,7 @@ jobs:
           username: shawnchan68
           password: ${{ secrets.GHCR_TOKEN }}
 
-      - name: Build & push
+      - name: Build and push Docker image
         uses: docker/build-push-action@v6
         with:
           context: .
