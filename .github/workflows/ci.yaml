@@ -1,4 +1,4 @@
-# This is Continuous Integration (CI)
+# This is Continuous Integration (CI) and this is for action to be taken when push to the repo
 # .github/workflows/ci.yaml
 # This workflow defines the Continuous Integration (CI) process for your project.
 
